@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: vanopt-db
+    environment:
+      POSTGRES_DB: vanopt
+      POSTGRES_USER: vanopt
+      POSTGRES_PASSWORD: vanopt
+    ports:
+      - "5432:5432"
+    volumes:
+      - vanopt-data:/var/lib/postgresql/data
+
+volumes:
+  vanopt-data:
